@@ -51,7 +51,7 @@ def package(m):
 
 
 def roll(a, b):
-    return sum([randint(1, b) for i in range(a)]), a, a * b
+    return sum([randint(1, b) for _ in range(a)]), a, a * b
 
 
 def roll_comp(r, e, f):
@@ -116,7 +116,7 @@ def roll_split(x):
 
 def match_roll(sender, content):
     sm = ""
-    for cont in content.split("\\n"):
+    for cont in content.split("\n"):
         pattern = re.compile('^([1-9][0-9]{0,2})?[d|D]([1-9][0-9]{0,2})'
                              # 匹配1个xdy、xDy、dy、Dy，x(1-999)，y(1-999)，取x、y
                              '((?:(?:[+-/*](?:[1-9][0-9]{0,2})?[d|D][1-9][0-9]{0,2})|(?:[+-/*][0-9]{1,3}))*)?'
